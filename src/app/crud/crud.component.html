@@ -1,0 +1,76 @@
+
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">CRUD</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-absolute text-center">
+<div  class="d-flex align-items-center justify-content-center"><h3 style="color:green;">CRUD using Angular and mvc core API</h3></div>
+<br/>
+<div class="d-flex align-items-center justify-content-center">
+ <form [formGroup]="form">
+    <table>
+        <tr>
+            <td>Enter Your Name: </td>
+             <td><input formControlName="name" name="name" type="text" placeholder="Enter the name" id="txtName"></td>
+        </tr>
+        <br/>
+        <tr>
+            <td>Enter Your City: </td>
+             <td><input formControlName="city" name="city" type="text" placeholder="Enter the city" id="txtCity"></td>
+        </tr>
+        <br/>
+        <tr>
+            <td></td>
+            <td>
+                <button class="btn btn-success" type="submit" (click)="update()" *ngIf="buttonShow" >update</button>
+                <button class="btn btn-success" type="submit" (click)="submit()" *ngIf="!buttonShow" >submit</button>
+                <button class="btn btn-danger" type="reset">Reset</button>              
+        </td>          
+        </tr>
+    </table>  
+</form> 
+</div>
+<br/>
+<br>
+<div>
+<table class="table" id="tbl">
+    <thead class="thead-dark">
+        <th>
+            sl#
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            city
+        </th>
+        <th>
+            action
+        </th>
+    </thead>
+    <tbody id="tblBody"> 
+        <tr *ngFor="let data of details; index as i ">
+            
+            <td>
+           {{(i+1)}}
+            </td>
+            <td>
+              {{data.name}}  
+            </td>
+            <td>
+                {{data.city}}   
+            </td>
+            <td>
+                <button class="btn btn-success" type="button" (click)="Edit(data.id)" >Edit</button>
+                <button class="btn btn-danger" type="button" (click)="Delete(data.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<a href="#" id="hrefData" routerLink="/dash">Click the link to go inside dashboard page</a>
+</div>
+</div>
+</div>
+
+
