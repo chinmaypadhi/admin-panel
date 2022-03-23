@@ -12,10 +12,10 @@ export class CrudComponent implements OnInit {
   form!: FormGroup;
   url:any;
   buttonShow : boolean =false;
-  constructor(public fb : FormBuilder,public service : CrudService) {}
+  constructor(public fb : FormBuilder ,public service : CrudService) {}
 
   ngOnInit(): void {
-   // this.viewData();
+    this.viewData();
     this.form = this.fb.group({
       name: [null],
       city: [null],
